@@ -1,0 +1,13 @@
+2024-10-14T05:49:07.397109Z main ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+System response:  Mail Sent
+Error: Incorrect phone was allowed - 0
+System response:  Mail Sent
+Error: Incorrect phone was allowed - 07777
+System response:  Mail Sent
+Error: Incorrect phone was allowed - 0777712
+System response:  Mail Sent
+Error: Incorrect phone was allowed - 077771234
+System response:  Mail Sent
+Error: Incorrect phone was allowed - 07777123456
+System response:  Mail Sent
+Error: Incorrect phone was allowed - 07777123456789
