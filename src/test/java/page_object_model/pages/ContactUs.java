@@ -3,7 +3,6 @@ package page_object_model.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
 public class ContactUs extends BasePage{
     // Invoking WebDriver of BasePage class
@@ -11,9 +10,8 @@ public class ContactUs extends BasePage{
         super(driver);
     }
 
-    // Testing whether Contact Number field works correctly, in Contact Us form
-    // Equivalence partitioning - Consider that a contact number must be 10 digits in length
-    // Data partitions as length of Contact Number are 0-9 (invalid), 10 (valid), and above 10 (invalid)
+    // Testing whether Contact detail fields works correctly, in Contact Us form
+    // Boundary value analysis - Considering that a contact number must be 10 digits in length (boundary lengths are 9 and 11)
 
     @FindBy(xpath = "//input[@id='fname']")
     public WebElement FirstName;
@@ -33,12 +31,12 @@ public class ContactUs extends BasePage{
     @FindBy(xpath = "//div[@id='content']/div/div")
     public WebElement SystemResponse;
 
-    // Use this method to test invalid phone numbers inputs
-    public void submitContactUsForm(String phone){
-        FirstName.sendKeys("Amal"); // Hardcoded as this field isn't a focus in this test
-        Phone.sendKeys(phone);
-        Email.sendKeys("abc@gmail.com");
-        Message.sendKeys("This is test message"); // This is hard coded since this is not focus of this test
+    // Use this method to submit contact details to the form
+    public String submitContactUsForm(String[] contactData){
+        FirstName.sendKeys(contactData[0]); // passed as parameters
+        Phone.sendKeys(contactData[1]); // --
+        Email.sendKeys(contactData[2]); // --
+        Message.sendKeys(contactData[3]);  // --
         SubmitButton.click();
         // Wait for 6 seconds to see system response
         try {
@@ -48,16 +46,8 @@ public class ContactUs extends BasePage{
             System.out.println("The sleep was interrupted.");
             e.printStackTrace();
         }
-
-        System.out.println("System response: " + SystemResponse.getText());
-        if((SystemResponse.getText()).equals(" Mail Sent")){
-            Assert.assertEquals(SystemResponse.getText(), " Mail Sent", "Error: Incorrect phone was allowed - " + phone);
-            System.out.println("Error: Incorrect phone was allowed - " + phone);
-            captureScreenShot("contact_number_error");
-        } else {
-            System.out.println("Incorrect was was denied - " + phone);
-        }
-        driver.navigate().refresh(); // Refresh page to erase the system response
+        String systemResponse = SystemResponse.getText();
+        return systemResponse;
     }
 
 

@@ -8,6 +8,7 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 
+// This utility is to capture screenshots when tests fail
 public class ScreenShotUtility {
     public void CaptureScreenshot(WebDriver driver, String fileName) {
         TakesScreenshot ts = (TakesScreenshot) driver;

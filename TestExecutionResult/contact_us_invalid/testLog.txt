@@ -1,0 +1,17 @@
+2024-10-26T11:44:52.217041Z main ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+Incorrect data was was denied - -0774123456-john@gmail.com-test message
+
+Error: Incorrect contact data was allowed - john--john@gmail.com-test message
+
+Error: Incorrect contact data was allowed - #345@-0774123456-john@gmail.com-test message
+
+Error: Incorrect contact data was allowed - john-077412345-john@gmail.com-test message
+
+Error: Incorrect contact data was allowed - john-07741234567-john@gmail.com-test message
+
+Incorrect data was was denied - john-0774123456--test message
+
+Incorrect data was was denied - john-0774123456-johngmail.com-test message
+
+Incorrect data was was denied - john-0774123456-john@gmail.com-
+

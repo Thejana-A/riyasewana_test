@@ -1,0 +1,5 @@
+2024-10-26T09:32:49.396361Z main ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+Correct signup data allowed -> john55 - pass123 - pass123 - John - john55@gmail.com - 0774123463 - Colombo
+
+Correct signup data allowed -> john59 - pass123 - pass123 - John - john59@gmail.com - 0774123463 - Colombo
+

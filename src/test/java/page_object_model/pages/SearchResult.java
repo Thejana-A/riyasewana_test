@@ -29,6 +29,12 @@ public class SearchResult extends HomePage{
     @FindBy(xpath = "//input[@name='pricemmax']")
     public WebElement MaximumPrice;
 
+    @FindBy(xpath = "//div[@id='content']/div")
+    public WebElement ResultUnavailableMessage;
+
+    // Note: This function is intended to be called by search facility of Home page, once some valid results are delivered. Not supposed to be called by a tester directly
+    // In this test scenario, due to complex cohesion of logic with many UI components, test logic wasn't separated to a separate Test file, as it will complicate behaviour
+    // Use this function to check valid search results retrieved for valid search facts searched from Home page
     public boolean testSearchResult(String[] vehicleData){
         String headerText = FirstItemHeader.getText();
         String subHeaderText = FirstItemCity.getText();
@@ -133,9 +139,16 @@ public class SearchResult extends HomePage{
             return true;
         } else {
             System.out.println("Error: Irrelevant data was present in search result" + "\n");
-            captureScreenShot("search_error");
+            captureScreenShot("valid_search_error");
             return false;
         }
+    }
+
+    // Note: This function is intended to be called by search facility of Home page, once after searching with hope of receiving null result set. Not supposed to be called by a tester directly
+    // Use this function to test search result, after searching for invalid facts (Expected null search results)
+    public String testInvalidSearchResult(String[] vehicleData){
+        String feedbackMessage = ResultUnavailableMessage.getText();
+        return feedbackMessage;
     }
 
 

@@ -1,0 +1,65 @@
+2024-10-26T10:02:48.609400Z main ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+Toyota ALLION G LIMITED PREMIUM 2011 Car Negotiable Dehiwala-Mount-Lavinia
+[Any Make, , Car, Any, Colombo, ]
+Error: Irrelevant data was present in search result
+
+Toyota Premio 260 2011 Car Rs. 11,300,000 Colombo
+[Any Make, premio, Car, Any, Colombo, ]
+Correct result was delivered by search facility
+
+Toyota Yaris 2010 Car Rs. 7,150,000 Colombo
+[Toyota, , Car, Any, Colombo, ]
+Correct result was delivered by search facility
+
+Toyota Premio 260 2011 Car Rs. 11,300,000 Colombo
+[Toyota, premio, Car, Any, Colombo, ]
+Correct result was delivered by search facility
+
+Toyota Noah KR41 1998 Van Rs. 6,250,000 Kurunegala
+[Any Make, , Van, Any, Colombo, ]
+Error: Irrelevant data was present in search result
+
+Toyota Hiace LH61 1989 Van Rs. 3,500,000 Colombo
+[Any Make, hiace, Van, Any, Colombo, ]
+Correct result was delivered by search facility
+
+Toyota Noah KR41 1998 Van Rs. 6,250,000 Kurunegala
+[Toyota, , Van, Any, Colombo, ]
+Error: Irrelevant data was present in search result
+
+Toyota Hiace LH61 1989 Van Rs. 3,500,000 Colombo
+[Toyota, hiace, Van, Any, Colombo, ]
+Correct result was delivered by search facility
+
+Honda Insight 2011 Car Rs. 7,015,000 Kurunegala
+[Any Make, , Car, 8,000,000 - 10 Million, Colombo, ]
+Error: Irrelevant data was present in search result
+
+Toyota Premio 2009 Car Rs. 9,750,000 Colombo
+[Any Make, premio, Car, 8,000,000 - 10 Million, Colombo, ]
+Correct result was delivered by search facility
+
+Toyota Yaris 2011 Car Negotiable Mirigama
+[Toyota, , Car, 8,000,000 - 10 Million, Colombo, ]
+Error: Irrelevant data was present in search result
+
+Toyota Premio 2009 Car Rs. 9,750,000 Colombo
+[Toyota, premio, Car, 8,000,000 - 10 Million, Colombo, ]
+Correct result was delivered by search facility
+
+Honda Fit GD1 2007 Car Rs. 4,690,000 Kandana
+[Any Make, , Car, Any, Piliyandala, ]
+Error: Irrelevant data was present in search result
+
+Toyota Premio 2003 Car Rs. 6,675,000 Piliyandala
+[Any Make, premio, Car, Any, Piliyandala, ]
+Correct result was delivered by search facility
+
+Toyota Yaris 2011 Car Negotiable Mirigama
+[Toyota, , Car, Any, Piliyandala, ]
+Error: Irrelevant data was present in search result
+
+Toyota Premio 2003 Car Rs. 6,675,000 Piliyandala
+[Toyota, premio, Car, Any, Piliyandala, ]
+Correct result was delivered by search facility
+

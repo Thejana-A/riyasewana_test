@@ -1,5 +1,0 @@
-2024-10-14T06:43:40.576565Z main ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
-Incorrect credentials were denied successfully:  -  
-Incorrect credentials were denied successfully: Thejana-a - 
-Incorrect credentials were denied successfully:  - pass123
-Incorrect credentials were denied successfully: Thejana-a - pass123

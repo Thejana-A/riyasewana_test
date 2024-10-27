@@ -1,0 +1,9 @@
+2024-10-26T11:10:57.661824Z main ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+Invalid result was denied successfully -> Nissan - premio - Car - Any - Colombo
+
+Invalid result was denied successfully -> Toyota - premio - Van - Any - Colombo
+
+Invalid result was denied successfully -> Toyota - premio - Car - < 100,000 - Colombo
+
+Invalid result was denied successfully -> Toyota - premio - Car - Any - Mullaitivu
+

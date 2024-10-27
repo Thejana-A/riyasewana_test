@@ -35,8 +35,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//input[@name='srch_btn']")
     public WebElement SearchButton;
 
-    // Testing 6 fields in Search facility
+    // Testing 5 fields in Search facility
     // Case-wise testing: Testing against pre-defined test cases, to see whether results delivered by Search are correct
+    // Use this function to submit search form, by passing search facts as parameters
     public void submitSearchFields(String[] searchValues){
         if(searchValues[0].equals("")){
             searchValues[0] = "Any Make";
@@ -61,10 +62,10 @@ public class HomePage extends BasePage {
     // Clear all fields for next test round
     public void emptyAllFields(){
         Model.clear();
-        // No need to clear Select fields, as they don't append new values to Input fields, in next test round
+        // No need to clear other fields (Select fields), as they don't append new values to Input fields, in next test round
     }
 
-    // Testing whether links in Home Page works correctly
+    // Testing whether links in Home Page work correctly
     public <T> T clickLink(String visibleText){
         driver.findElement(By.xpath("//a[text()='" + visibleText + "']")).click();
         if(visibleText.equals("Login")){

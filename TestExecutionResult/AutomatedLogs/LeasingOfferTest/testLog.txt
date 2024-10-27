@@ -1,9 +1,0 @@
-2024-10-14T06:34:57.668404Z main ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
-System response: Please enter your details to connect with a leasing agent
-Incorrect name or phone denied ->   - 77771234
-System response: Please enter your details to connect with a leasing agent
-Incorrect name or phone denied ->   - 7777123456
-System response: Thank you, One of our leasing agents will contact you.
-Error: Incorrect name or phone allowed -> a - 77771234
-System response: Thank you, One of our leasing agents will contact you.
-Error: Incorrect name or phone allowed -> a - 7777123456

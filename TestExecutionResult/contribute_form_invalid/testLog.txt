@@ -1,0 +1,15 @@
+2024-10-26T13:46:52.877606Z main ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+Invalid values were denied successfully:  - 0774123456 - john@gmail.com
+
+Error: Invalid data was allowed #@345! - 0774123457 - john@gmail.com
+
+Invalid values were denied successfully: john -  - john@gmail.com
+
+Error: Invalid data was allowed john - 077412345 - john@gmail.com
+
+Error: Invalid data was allowed john - 07741234578 - john@gmail.com
+
+Invalid values were denied successfully: john - 0774123457 - 
+
+Invalid values were denied successfully: john - 0774123457 - johngmail.com
+

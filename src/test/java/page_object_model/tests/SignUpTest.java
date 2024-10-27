@@ -3,42 +3,71 @@ package page_object_model.tests;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 import page_object_model.pages.SignUp;
-import page_object_model.utilities.ReadFromXLUtility;
+import page_object_model.pages.UserAccount;
 import org.testng.annotations.DataProvider;
-
-import java.util.ArrayList;
+import org.testng.asserts.SoftAssert;
 
 public class SignUpTest extends HomePageTest {
-    // Testing password & re-enter password
-    // Error guessing technique - assuming that re-enter password functionality may not work correctly
+    // Testing fields of signup form
+    // Pairwise test design - since there are 7 fields to test, to minimize number of test cases, pairwise test design is used
+    // Test case designed considering that phone number is a String of 10 digits
 
-    // Use ReadFromXLUtility utility, to retrieve password dataset from Excel sheet
-    @DataProvider(name = "passwordDataProvider")
-    public Object[][] readPasswordFromXL() {
-        ReadFromXLUtility readFromXLUtility = new ReadFromXLUtility();
-        String XLFileName = "/home/thejana/Documents/assignments/year_04/is4102/practicals/riyasewana/TestDataset.xlsx";
-        String XLSheetName = "SignUpPassword";
-        ArrayList<ArrayList<String>> data = readFromXLUtility.readDataFromXL(XLFileName, XLSheetName);
-
-        // Convert ArrayList to Object[][]
-        Object[][] dataArray = new Object[data.size()][];
-        for (int i = 0; i < data.size(); i++) {
-            dataArray[i] = data.get(i).toArray();
-        }
-        return dataArray;
+    // Use ReadFromXLUtility utility, to retrieve invalid signup dataset from Excel sheet
+    @DataProvider(name = "invalidSignupData")
+    public Object[][] invalidSignupData() {
+        return readDataFromXL("InvalidSignUpData");
     }
 
-    // Test whether password and re-enter password fields match and work properly
-    @Test(dataProvider = "passwordDataProvider")
-    public void testReEnterPassword(String password, String reEnterPassword) {
+    // Test whether fields of sign up form work properly for incorrect input
+    @Test(dataProvider = "invalidSignupData")
+    public void testInvalidSignUpData(String[] formData) {
+        SoftAssert softAssert = new SoftAssert(); // To prevent failure of all later test cases
         clickSignUp(); // Navigate to Sign Up page from Home Page
         SignUp signUp = PageFactory.initElements(browserFactory.getDriver(), SignUp.class);
-        sleep(10000); // During this time, user can manually close any advertisement that appears
-
-        signUp.submitSignUpForm(password, reEnterPassword); // For each pair of password & re-enter password
-        sleep(8000); // During this time, user can observe application feedback, before browser closes
+        sleep(6000); // During this time, user can manually close any advertisement that appears, since they appear in various dynamic forms, covering the whole screen
         signUp.emptyAllFields();
-        sleep(2000); // To clear out all input fields, for next iteration
+        sleep(2000); // To clear out all input fields, if they have values
+        String currentUrl = signUp.submitSignUpForm(formData); // For each pair of password & re-enter password
+        if(!(currentUrl.equals("https://riyasewana.com/register.php"))){
+            softAssert.assertEquals(currentUrl, "https://riyasewana.com/register.php", "Error: Incorrect sign up data allowed");
+            System.out.println("Error: Incorrect sign up data allowed ->  " + formData[0] + " - " + formData[1] + " - " + formData[2] + " - " + formData[3] + " - " + formData[4] + " - " + formData[5] + " - " + formData[6] + "\n");
+            signUp.captureScreenShot("invalid_signup_error");
+            UserAccount userAccount = PageFactory.initElements(browserFactory.getDriver(), UserAccount.class);
+            userAccount.clickLogOut();
+        } else {
+            System.out.println("Incorrect signup data denied -> " + formData[0] + " - " + formData[1] + " - " + formData[2] + " - " + formData[3] + " - " + formData[4] + " - " + formData[5] + " - " + formData[6] + "\n");
+        }
+        sleep(4000); // During this time, tester can observe application feedback, before browser closes
+        softAssert.assertAll(); // This will report all failures
+    }
+
+    // Use ReadFromXLUtility utility, to retrieve valid signup dataset from Excel sheet
+    @DataProvider(name = "validSignupData")
+    public Object[][] validSignupData() {
+        return readDataFromXL("ValidSignUpData");
+    }
+
+    // Test whether fields of sign up form work properly for correct input
+    @Test(dataProvider = "validSignupData")
+    public void testValidSignUpData(String[] formData) {
+        SoftAssert softAssert = new SoftAssert(); // To prevent failure of all later test cases
+        clickSignUp(); // Navigate to Sign Up page from Home Page
+        SignUp signUp = PageFactory.initElements(browserFactory.getDriver(), SignUp.class);
+        sleep(6000); // During this time, user can manually close any advertisement that appears, since they appear in various dynamic forms, covering the whole screen
+        signUp.emptyAllFields();
+        sleep(2000); // To clear out all input fields, if they have values
+        String currentUrl = signUp.submitSignUpForm(formData); // For each pair of password & re-enter password
+        if(currentUrl.equals("https://riyasewana.com/register.php")){
+            softAssert.assertNotEquals(currentUrl, "https://riyasewana.com/register.php", "Error: Correct sign up data not allowed");
+            System.out.println("Error: Correct sign up data not allowed ->  " + formData[0] + " - " + formData[1] + " - " + formData[2] + " - " + formData[3] + " - " + formData[4] + " - " + formData[5] + " - " + formData[6] + "\n");
+            signUp.captureScreenShot("valid_signup_error");
+        } else {
+            System.out.println("Correct signup data allowed -> " + formData[0] + " - " + formData[1] + " - " + formData[2] + " - " + formData[3] + " - " + formData[4] + " - " + formData[5] + " - " + formData[6] + "\n");
+            UserAccount userAccount = PageFactory.initElements(browserFactory.getDriver(), UserAccount.class);
+            userAccount.clickLogOut();
+        }
+        sleep(4000); // During this time, tester can observe application feedback, before browser closes
+        softAssert.assertAll(); // This will report all failures
     }
 
 }

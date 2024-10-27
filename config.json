@@ -3,7 +3,8 @@
         "username": "Thejana-A",
         "password": "thejana123",
         "url": "https://riyasewana.com/",
-        "browser": "chrome"
+        "browser": "chrome",
+        "datafile": "TestDataset.xlsx"
     }
 }
 

@@ -1,0 +1,5 @@
+2024-10-27T03:29:01.259582Z main ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+Correct leasing data was allowed successfully ->  john - 0774123456 - Colombo
+
+Correct leasing data was allowed successfully ->  peter - 0774123456 - Colombo
+

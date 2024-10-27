@@ -40,32 +40,21 @@ public class SignUp extends BasePage{
     @FindBy(xpath = "//input[@id='sub']")
     public WebElement SubmitButton;
 
-    @FindBy(xpath = "//div[@id='content']/div/div[2]/ul/li")
-    public WebElement SystemResponse;
 
-    // Use this method to test incorrect password, re-enter password pairs only, not for other fields
-    // Dynamically provide password, re-enter password, and submit form
-    public void submitSignUpForm(String password, String reEnterPassword){
+    // Use this method to submit sign up form with parameterized data
+    public String submitSignUpForm(String[] formData){
         emptyAllFields(); // Make sure that all fields are empty
-        UserName.sendKeys("Thejana-B"); // Hard coded these, as they aren't the focus of this test
-        Name.sendKeys("Thejana"); // --
-        Email.sendKeys("2020is001@stu.ucsc.cmb.ac.lk"); // --
-        Phone.sendKeys("0777712345"); // --
-        new Select(City).selectByVisibleText("Colombo"); // Hard coded these, as they aren't the focus of this test
-
-        Password.sendKeys(password); // Passed dynamically as parameters
-        ReEnterPassword.sendKeys(reEnterPassword);
+        UserName.sendKeys(formData[0]); // Passed dynamically as parameters
+        Password.sendKeys(formData[1]); // --
+        ReEnterPassword.sendKeys(formData[2]); // --
+        Name.sendKeys(formData[3]); // --
+        Email.sendKeys(formData[4]); // --
+        Phone.sendKeys(formData[5]); // --
+        new Select(City).selectByVisibleText(formData[6]); // --
         SubmitButton.click();
 
-        System.out.println("System response: " + SystemResponse.getText());
-
-        if((SystemResponse.getText()).isEmpty()){
-            System.out.println("Error: Incorrect password pair was allowed ->  " + password + " - " + reEnterPassword + "\n");
-            captureScreenShot("signup_error");
-        } else {
-            System.out.println("Incorrect password pair denied -> " + password + " - " + reEnterPassword + "\n");
-        }
-        driver.navigate().refresh(); // Refresh page to erase the system response
+        String currentUrl = driver.getCurrentUrl();
+        return currentUrl;
     }
 
     // Clear all fields for next test round
@@ -76,5 +65,6 @@ public class SignUp extends BasePage{
         Phone.clear();
         Password.clear();
         ReEnterPassword.clear();
+        new Select(City).selectByVisibleText("Select City");
     }
 }

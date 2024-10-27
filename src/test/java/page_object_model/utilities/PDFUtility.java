@@ -12,6 +12,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+// For writing logs to a pdf file
 public class PDFUtility {
 
     public static void createPDF(String logFilePath, String pdfFilePath) {

@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 public class Contribute extends BasePage {
     // Invoking WebDriver of BasePage class
@@ -31,24 +30,16 @@ public class Contribute extends BasePage {
     @FindBy(xpath = "//input[@id='sub']")
     public WebElement SubmitButton;
 
-    // Use this method to test incorrect phone number or incorrect email inputs
-    public void submitContributeForm(String phoneNumber, String email){
-        FirstName.sendKeys("Thejana-A"); // Hardcoded since this field is not focussed in this test
-        Phone.sendKeys(phoneNumber);
-        Email.sendKeys(email);
-        new Select(Amount).selectByVisibleText("Rs. 500"); // This is hard coded since this is not focus of this test
+    // Use this method to submit data to contribute form
+    public String submitContributeForm(String[] contributeData){
+        FirstName.sendKeys(contributeData[0]); // Dynamically updated by test
+        Phone.sendKeys(contributeData[1]);
+        Email.sendKeys(contributeData[2]);
+        new Select(Amount).selectByVisibleText("Rs. 500"); // This is hard coded since this is always selected by default
         SubmitButton.click();
 
         String currentUrl = driver.getCurrentUrl();
-        if (currentUrl.equals("https://www.payhere.lk/pay/checkout")){
-            Assert.assertEquals(currentUrl, "https://www.payhere.lk/pay/checkout", "Error in validation of email or phone ");
-            System.out.println("Error in validation: Phone - " + phoneNumber + " email - " + email);
-            System.out.println("Incorrect phone or email was allowed");
-            captureScreenShot("contribute_form_error");
-            driver.navigate().back();
-        } else {
-            System.out.println("Invalid values were denied successfully: Phone - " + phoneNumber + " email - " + email);
-        }
+        return currentUrl;
     }
 
     // Clear all fields for next test round

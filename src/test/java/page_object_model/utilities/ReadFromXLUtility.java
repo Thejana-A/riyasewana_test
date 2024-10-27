@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+// To retrieve test data from Excel file
 public class ReadFromXLUtility {
     public ArrayList<ArrayList<String>> readDataFromXL(String fileName, String sheetName){
         DataFormatter dataFormatter = new DataFormatter(); // POI data formatter to read all Excel values as Strings only

@@ -1,0 +1,5 @@
+2024-10-26T13:53:56.318983Z main ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+Valid values were allowed successfully: john - 0774123456 - john@gmail.com
+
+Valid values were allowed successfully: peter - 0774123457 - peter@yahoo.com
+

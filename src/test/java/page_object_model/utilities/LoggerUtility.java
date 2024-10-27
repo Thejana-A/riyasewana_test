@@ -2,6 +2,7 @@ package page_object_model.utilities;
 
 import java.io.*;
 
+// For writing logs to a txt file
 public class LoggerUtility {
 
     private PrintStream printStream;

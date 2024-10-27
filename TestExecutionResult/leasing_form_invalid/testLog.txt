@@ -1,0 +1,15 @@
+2024-10-26T14:32:33.940488Z main ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+Incorrect leasing data was denied successfully ->   - 0774123456 - Colombo
+
+Error: Incorrect leasing data was allowed -> 34#yhf$ - 0774123456 - Colombo
+
+Error: Incorrect leasing data was allowed -> john - 0774 - Colombo
+
+Error: Incorrect leasing data was allowed -> john - 0774345 - Colombo
+
+Error: Incorrect leasing data was allowed -> john - 0774345123456 - Colombo
+
+Error: Incorrect leasing data was allowed -> john - 077434512345623 - Colombo
+
+Incorrect leasing data was denied successfully ->  john - 0774123456 - 
+
