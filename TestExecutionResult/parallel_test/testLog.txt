@@ -1,0 +1,8 @@
+2024-10-28T04:10:23.785697Z TestNG-test-Test Correct and Incorrect Logins in parallel-1 ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+Incorrect credentials were denied successfully:  -  
+Correct credentials were allowed successfully
+Incorrect credentials were denied successfully: Thejana-a - 
+Incorrect credentials were denied successfully:  - pass123
+Incorrect credentials were denied successfully: Thejana - pass
+Incorrect credentials were denied successfully: Thejana-a - pass123
+Incorrect credentials were denied successfully: Thejana - thejana123

@@ -1,4 +1,4 @@
-2024-10-26T08:44:35.712266Z main ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
+2024-10-28T05:14:42.310615Z main ERROR Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console...
 Incorrect signup data denied ->  - pass123 - pass123 - John - john00@gmail.com - 0774123466 - Colombo
 
 Incorrect signup data denied -> john11 - pass123 -  - John - john11@gmail.com - 0774123456 - Colombo
@@ -13,7 +13,7 @@ Incorrect signup data denied -> john15 - 12345678 - 1234567 - John - john15@gmai
 
 Incorrect signup data denied -> john16 - pass123 - pass123 -  - john16@gmail.com - 0774123461 - Colombo
 
-Error: Incorrect sign up data allowed ->  john77 - pass123 - pass123 - John$* - john77@gmail.com - 0774123462 - Colombo
+Error: Incorrect sign up data allowed ->  john87 - pass123 - pass123 - John$* - john87@gmail.com - 0774123462 - Colombo
 
 Incorrect signup data denied -> john18 - pass123 - pass123 - John -  - 0774123463 - Colombo
 
@@ -23,7 +23,7 @@ Incorrect signup data denied -> john20 - pass123 - pass123 - John - john19gmail.
 
 Incorrect signup data denied -> john21 - pass123 - pass123 - John - john20@gmail.com - 0774abcdef - Colombo
 
-Error: Incorrect sign up data allowed ->  john32 - pass123 - pass123 - John - john31@gmail.com - 0774123463 - Colombo
+Incorrect signup data denied -> john42 - pass123 - pass123 - John - john41@gmail.com - 077412346 - Colombo
 
 Incorrect signup data denied -> john23 - pass123 - pass123 - John - john22@gmail.com - 07741234666 - Colombo
 
